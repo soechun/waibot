@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <script>
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+
+    function send (url) {
+      console.log("send url: " + url) ;
+      let message = {
+        "attachment":{
+          "type":"image", 
+          "payload":{
+            "url": url,
+            "is_reusable":false
+          }
+        }
+      };
+
+      MessengerExtensions.beginShareFlow(function(share_response) {
+      // User dismissed without error, but did they share the message?
+        if(share_response.is_sent){
+          MessengerExtensions.requestCloseBrowser();
+        }
+      }, 
+      function(errorCode, errorMessage) {     
+        console.log(errorCode + ": " + errorMessage); 
+      },
+      message,
+      "current_thread");
+    }
+
+  </script>
+
+  <div class="well" style="margin-top:20px">
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/354/1.0" data-tooltip="<strong>4Head</strong>" data-regex="4Head" data-toggle="popover" data-image-id="354" class="emote expandable-emote"><br></a>4Head</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/3792/1.0" data-tooltip="<strong>ANELE</strong>" data-regex="ANELE" data-toggle="popover" data-image-id="3792" class="emote expandable-emote"><br></a>ANELE</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/22639/1.0" data-tooltip="<strong>BabyRage</strong>" data-regex="BabyRage" data-toggle="popover" data-image-id="22639" class="emote expandable-emote"><br></a>BabyRage</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/86/1.0" data-tooltip="<strong>BibleThump</strong>" data-regex="BibleThump" data-toggle="popover" data-image-id="86" class="emote expandable-emote"><br></a>BibleThump</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/153556/1.0" data-tooltip="<strong>BlessRNG</strong>" data-regex="BlessRNG" data-toggle="popover" data-image-id="153556" class="emote expandable-emote"><br></a>BlessRNG</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/4057/1.0" data-tooltip="<strong>BrokeBack</strong>" data-regex="BrokeBack" data-toggle="popover" data-image-id="4057" class="emote expandable-emote"><br></a>BrokeBack</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/33/1.0" data-tooltip="<strong>DansGame</strong>" data-regex="DansGame" data-toggle="popover" data-image-id="33" class="emote expandable-emote"><br></a>DansGame</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/58135/1.0" data-tooltip="<strong>DendiFace</strong>" data-regex="DendiFace" data-toggle="popover" data-image-id="58135" class="emote expandable-emote"><br></a>DendiFace</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/4339/1.0" data-tooltip="<strong>EleGiggle</strong>" data-regex="EleGiggle" data-toggle="popover" data-image-id="4339" class="emote expandable-emote"><br></a>EleGiggle</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/360/1.0" data-tooltip="<strong>FailFish</strong>" data-regex="FailFish" data-toggle="popover" data-image-id="360" class="emote expandable-emote"><br></a>FailFish</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/30259/1.0" data-tooltip="<strong>HeyGuys</strong>" data-regex="HeyGuys" data-toggle="popover" data-image-id="30259" class="emote expandable-emote"><br></a>HeyGuys</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/114836/1.0" data-tooltip="<strong>Jebaited</strong>" data-regex="Jebaited" data-toggle="popover" data-image-id="114836" class="emote expandable-emote"><br></a>Jebaited</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" data-tooltip="<strong>Kappa</strong>" data-regex="Kappa" data-toggle="popover" data-image-id="25" class="emote expandable-emote"><br></a>Kappa</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/74510/1.0" data-tooltip="<strong>KappaClaus</strong>" data-regex="KappaClaus" data-toggle="popover" data-image-id="74510" class="emote expandable-emote"><br></a>KappaClaus</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/55338/1.0" data-tooltip="<strong>KappaPride</strong>" data-regex="KappaPride" data-toggle="popover" data-image-id="55338" class="emote expandable-emote"><br></a>KappaPride</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/70433/1.0" data-tooltip="<strong>KappaRoss</strong>" data-regex="KappaRoss" data-toggle="popover" data-image-id="70433" class="emote expandable-emote"><br></a>KappaRoss</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/81997/1.0" data-tooltip="<strong>KappaWealth</strong>" data-regex="KappaWealth" data-toggle="popover" data-image-id="81997" class="emote expandable-emote"><br></a>KappaWealth</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/1902/1.0" data-tooltip="<strong>Keepo</strong>" data-regex="Keepo" data-toggle="popover" data-image-id="1902" class="emote expandable-emote"><br></a>Keepo</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/41/1.0" data-tooltip="<strong>Kreygasm</strong>" data-regex="Kreygasm" data-toggle="popover" data-image-id="41" class="emote expandable-emote"><br></a>Kreygasm</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/425618/1.0" data-tooltip="<strong>LUL</strong>" data-regex="LUL" data-toggle="popover" data-image-id="425618" class="emote expandable-emote"><br></a>LUL</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/68856/1.0" data-tooltip="<strong>MingLee</strong>" data-regex="MingLee" data-toggle="popover" data-image-id="68856" class="emote expandable-emote"><br></a>MingLee</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/58765/1.0" data-tooltip="<strong>NotLikeThis</strong>" data-regex="NotLikeThis" data-toggle="popover" data-image-id="58765" class="emote expandable-emote"><br></a>NotLikeThis</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/81248/1.0" data-tooltip="<strong>OSFrog</strong>" data-regex="OSFrog" data-toggle="popover" data-image-id="81248" class="emote expandable-emote"><br></a>OSFrog</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/36/1.0" data-tooltip="<strong>PJSalt</strong>" data-regex="PJSalt" data-toggle="popover" data-image-id="36" class="emote expandable-emote"><br></a>PJSalt</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/88/1.0" data-tooltip="<strong>PogChamp</strong>" data-regex="PogChamp" data-toggle="popover" data-image-id="88" class="emote expandable-emote"><br></a>PogChamp</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/52/1.0" data-tooltip="<strong>SMOrc</strong>" data-regex="SMOrc" data-toggle="popover" data-image-id="52" class="emote expandable-emote"><br></a>SMOrc</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/64138/1.0" data-tooltip="<strong>SeemsGood</strong>" data-regex="SeemsGood" data-toggle="popover" data-image-id="64138" class="emote expandable-emote"><br></a>SeemsGood</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/1906/1.0" data-tooltip="<strong>SoBayed</strong>" data-regex="SoBayed" data-toggle="popover" data-image-id="1906" class="emote expandable-emote"><br></a>SoBayed</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/38436/1.0" data-tooltip="<strong>TTours</strong>" data-regex="TTours" data-toggle="popover" data-image-id="38436" class="emote expandable-emote"><br></a>TTours</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/120232/1.0" data-tooltip="<strong>TriHard</strong>" data-regex="TriHard" data-toggle="popover" data-image-id="120232" class="emote expandable-emote"><br></a>TriHard</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/114856/1.0" data-tooltip="<strong>UncleNox</strong>" data-regex="UncleNox" data-toggle="popover" data-image-id="114856" class="emote expandable-emote"><br></a>UncleNox</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/81274/1.0" data-tooltip="<strong>VoHiYo</strong>" data-regex="VoHiYo" data-toggle="popover" data-image-id="81274" class="emote expandable-emote"><br></a>VoHiYo</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/28087/1.0" data-tooltip="<strong>WutFace</strong>" data-regex="WutFace" data-toggle="popover" data-image-id="28087" class="emote expandable-emote"><br></a>WutFace</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/84608/1.0" data-tooltip="<strong>cmonBruh</strong>" data-regex="cmonBruh" data-toggle="popover" data-image-id="84608" class="emote expandable-emote"><br></a>cmonBruh</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/57740/1.0" data-tooltip="<strong>admiralPleb</strong>" data-regex="admiralPleb" data-toggle="popover" data-image-id="84608" class="emote expandable-emote"><br></a>admiralPleb</center><br></div>
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://cdn.frankerfacez.com/emoticon/231552/1" data-tooltip="<strong>PepeHands</strong>" data-regex="PepeHands" data-toggle="popover" data-image-id="84608" class="emote expandable-emote"><br></a>PepeHands</center><br></div>
+      </div>
+      <div class="row">
+      <div class="col-md-2"><center><a onclick="send(this.childNodes[0].src)" class="emote-name"><img src="https://static-cdn.jtvnw.net/emoticons/v1/849397/1.0" data-tooltip="<strong>monkaS</strong>" data-regex="monkaS" data-toggle="popover" data-image-id="84608" class="emote expandable-emote"><br></a>monkaS</center><br></div>
+      </div>
+      </div>
+</body>
+</html>
